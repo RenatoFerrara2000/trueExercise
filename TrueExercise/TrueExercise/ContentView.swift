@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State  var itemArray: [ListItem] = [
+    @State private var itemArray: [ListItem] = [
         ListItem(name: "Red", color: .red),
         ListItem(name: "Blue", color: .blue),
         ListItem(name: "Green", color: .green),
@@ -17,17 +17,17 @@ struct ContentView: View {
      ]
     
     var body: some View {
-        
-             NavigationStack {
-                 List($itemArray) { item in
-                    ItemRow(item: item)
-
-                }
-                .navigationDestination(for: ListItem.self) { item in
-                    DetailView(itemColor: item.color)
+        NavigationStack {
+            List($itemArray) { $item in
+                ItemRow(item: $item)
+            }
+            .navigationDestination(for: ListItem.self) { item in
+                if let index = itemArray.firstIndex(where: { $0.id == item.id }) {
+                    DetailView(item: $itemArray[index])
                 }
             }
-         }
+        }
+    }
 }
 
 #Preview {

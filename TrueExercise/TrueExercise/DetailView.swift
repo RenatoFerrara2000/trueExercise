@@ -7,14 +7,23 @@
 import SwiftUI
 
 struct DetailView: View {
-    var itemColor: Color
+    @Binding var item: ListItem
     var  body: some View {
         Rectangle()
-            .fill(itemColor)
+            .fill(item.color)
+        
+        Button {
+            item.isFavorite.toggle()
+        } label: {
+            Image(systemName: (item.isFavorite ? "star.fill" : "star"))
+
+        }
     }
 }
 
 #Preview {
-    DetailView(itemColor: .blue)
+    @Previewable @State var exampleItem = ListItem.example
+    DetailView(item:  $exampleItem)
+
 }
 

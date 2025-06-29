@@ -18,7 +18,7 @@ struct ItemRow: View {
         Button {
             item.isFavorite.toggle()
         } label: {
-            Image(systemName: (item.isFavorite ? "star" : "star.fill"))
+            Image(systemName: (item.isFavorite ? "star.fill" : "star"))
                 
         }
     }
