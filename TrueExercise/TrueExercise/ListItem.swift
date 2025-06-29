@@ -11,4 +11,7 @@ struct ListItem: Identifiable, Hashable{
     let id = UUID()
     let name: String
     let color: Color
+    var isFavorite = false
+    
+    static let example = ListItem(name: "Example", color: Color.pink)
 }
