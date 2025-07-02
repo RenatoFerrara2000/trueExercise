@@ -14,18 +14,18 @@ struct ContentView: View {
         ListItem(name: "Green", color: .green),
         ListItem(name: "Black", color: .black),
         ListItem(name: "Yellow", color: .yellow)
-     ]
+    ]
     
     var body: some View {
         NavigationStack {
             List($itemArray) { $item in
                 ItemRow(item: $item)
-            }
-            .navigationDestination(for: ListItem.self) { item in
-                if let index = itemArray.firstIndex(where: { $0.id == item.id }) {
-                    DetailView(item: $itemArray[index])
+            }   .navigationTitle("Colors")
+                .navigationDestination(for: ListItem.self) { item in
+                    if let index = itemArray.firstIndex(where: { $0.id == item.id }) {
+                        DetailView(item: $itemArray[index])
+                    }
                 }
-            }
         }
     }
 }

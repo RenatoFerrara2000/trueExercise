@@ -13,5 +13,5 @@ struct ListItem: Identifiable, Hashable{
     let color: Color
     var isFavorite = false
     
-    static let example = ListItem(name: "Example", color: Color.pink)
+    static let example = ListItem(name: "Example", color: Color.orange)
 }
