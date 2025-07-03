@@ -13,8 +13,10 @@ struct IsFavoriteButton: View {
         Button {
             item.isFavorite.toggle()
         } label: {
-            Image(systemName: (item.isFavorite ? "star.fill" : "star"))
+            Image(systemName: item.isFavorite ? "star.fill" : "star.slash")
                 .foregroundColor(item.isFavorite ? .yellow : .gray)
+                .tint(item.isFavorite ? item.color : .gray)
+
 
         }
     }

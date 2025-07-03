@@ -12,7 +12,7 @@ struct ContentView: View {
         ListItem(name: "Red", color: .red),
         ListItem(name: "Blue", color: .blue),
         ListItem(name: "Green", color: .green),
-        ListItem(name: "Black", color: .black),
+        ListItem(name: "Pink", color: .pink),
         ListItem(name: "Yellow", color: .yellow)
     ]
     

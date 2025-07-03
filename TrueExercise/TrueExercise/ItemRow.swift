@@ -9,11 +9,13 @@ import SwiftUI
 struct ItemRow: View {
     @Binding var item: ListItem
     var body: some View {
-         NavigationLink(value: item) {
-                 Text(item.name)
-                    .foregroundStyle(item.color)
-            }
-         IsFavoriteButton(item: $item)
+        NavigationLink(value: item) {
+            Text(item.name)
+                .foregroundStyle(item.color)
+                .swipeActions(edge: .leading) {
+                    IsFavoriteButton(item: $item)
+                }
+        }
     }
 }
 
