@@ -18,13 +18,7 @@ struct DetailView: View {
             
             Text(item.name)
             
-            Button {
-                item.isFavorite.toggle()
-            } label: {
-                Image(systemName: item.isFavorite ? "star.fill" : "star")
-                    .font(.title)
-                    .foregroundColor(item.isFavorite ? .yellow : .gray)
-            }
+            isFavoriteButton(item: $item)
         }
         .padding()
         .navigationTitle(item.name)

@@ -15,12 +15,7 @@ struct ItemRow: View {
                     .foregroundStyle(item.color)
             }
         }
-        Button {
-            item.isFavorite.toggle()
-        } label: {
-            Image(systemName: (item.isFavorite ? "star.fill" : "star"))
-                
-        }
+        isFavoriteButton(item: $item)
     }
 }
 
