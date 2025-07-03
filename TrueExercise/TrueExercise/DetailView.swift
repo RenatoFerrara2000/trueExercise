@@ -18,7 +18,7 @@ struct DetailView: View {
             
             Text(item.name)
             
-            isFavoriteButton(item: $item)
+            IsFavoriteButton(item: $item)
         }
         .padding()
         .navigationTitle(item.name)

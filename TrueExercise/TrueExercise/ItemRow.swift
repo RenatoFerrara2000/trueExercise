@@ -9,13 +9,11 @@ import SwiftUI
 struct ItemRow: View {
     @Binding var item: ListItem
     var body: some View {
-        HStack{
-        NavigationLink(value: item) {
+         NavigationLink(value: item) {
                  Text(item.name)
                     .foregroundStyle(item.color)
             }
-        }
-        isFavoriteButton(item: $item)
+         IsFavoriteButton(item: $item)
     }
 }
 

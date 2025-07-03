@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct isFavoriteButton: View {
+struct IsFavoriteButton: View {
     @Binding var item: ListItem
     var body: some View {
         Button {
@@ -22,6 +22,6 @@ struct isFavoriteButton: View {
 
 #Preview {
     @Previewable @State var exampleItem = ListItem.example
-     isFavoriteButton(item: $exampleItem)
+     IsFavoriteButton(item: $exampleItem)
 }
  
