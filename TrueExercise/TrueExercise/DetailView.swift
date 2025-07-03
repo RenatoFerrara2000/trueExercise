@@ -16,13 +16,19 @@ struct DetailView: View {
                 .frame(height: 200)
                 .cornerRadius(12)
             
-            Text(item.name)
-            
-            IsFavoriteButton(item: $item)
-        }
-        .padding()
-        .navigationTitle(item.name)
-        .navigationBarTitleDisplayMode(.inline)
+            VStack(spacing: 10) {
+                Text(item.name)
+                    .foregroundStyle(item.color)
+                
+                IsFavoriteButton(item: $item)
+            }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("\(item.name), \(item.isFavorite ? "favorite" : "not favorite")")
+            .padding()
+        }    .navigationTitle(item.name)
+            .navigationBarTitleDisplayMode(.inline)
+        
+        
     }
 }
 

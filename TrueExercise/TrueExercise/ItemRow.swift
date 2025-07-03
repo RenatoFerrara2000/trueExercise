@@ -12,6 +12,9 @@ struct ItemRow: View {
         NavigationLink(value: item) {
             Text(item.name)
                 .foregroundStyle(item.color)
+                .accessibilityLabel("\(item.name), \(item.isFavorite ? "is favorite" : "is not favorite")")
+                .accessibilityHint("Double tap to open detail view")
+
                 .swipeActions(edge: .leading) {
                     IsFavoriteButton(item: $item)
                 }

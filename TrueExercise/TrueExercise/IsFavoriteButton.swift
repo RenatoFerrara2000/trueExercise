@@ -16,14 +16,14 @@ struct IsFavoriteButton: View {
             Image(systemName: item.isFavorite ? "star.fill" : "star.slash")
                 .foregroundColor(item.isFavorite ? .yellow : .gray)
                 .tint(item.isFavorite ? item.color : .gray)
-
-
+                .accessibilityHint("Double tap to toggle favorite status")
+            
         }
     }
 }
 
 #Preview {
     @Previewable @State var exampleItem = ListItem.example
-     IsFavoriteButton(item: $exampleItem)
+    IsFavoriteButton(item: $exampleItem)
 }
- 
+
