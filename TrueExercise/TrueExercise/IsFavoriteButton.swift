@@ -16,9 +16,9 @@ struct IsFavoriteButton: View {
             Image(systemName: item.isFavorite ? "star.fill" : "star.slash")
                 .foregroundColor(item.isFavorite ? .yellow : .gray)
                 .tint(item.isFavorite ? item.color : .gray)
-                .accessibilityHint("Double tap to \(item.isFavorite ? "remove" : "add")  favorite status for \(item.color)")
-            
         }
+        .accessibilityLabel(item.isFavorite ? "remove from favorites" : "add to favorites")
+        .accessibilityHint("Double tap to \(item.isFavorite ? "remove" : "add")  favorite status for \(item.color)")
     }
 }
 

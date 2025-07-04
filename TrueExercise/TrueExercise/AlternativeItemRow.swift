@@ -7,7 +7,7 @@
 import SwiftUI
 
 
-/// Built to follow the indication as written, but having two buttons on the same row that do 2 different things can create confusion or mistakes, so I prefer  the swipe  version as shwn in ItemRow
+/// Built to follow the indication as written, but having two buttons on the same row that do 2 different things can create confusion or mistakes, so I prefer  the swipe  version as shown in ItemRow
 
 struct AlternativeItemRow: View {
     @Binding var item: ListItem

@@ -19,15 +19,14 @@ struct DetailView: View {
             VStack(spacing: 10) {
                 Text(item.name)
                     .foregroundStyle(item.color)
+                    .accessibilityLabel("\(item.name), \(item.isFavorite ? "favorite" : "not favorite")")
                 
                 IsFavoriteButton(item: $item)
             }
             .accessibilityElement(children: .combine)
-            .accessibilityLabel("\(item.name), \(item.isFavorite ? "favorite" : "not favorite")")
             .padding()
         }    .navigationTitle(item.name)
             .navigationBarTitleDisplayMode(.inline)
-        
         
     }
 }
