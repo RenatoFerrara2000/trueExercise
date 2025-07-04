@@ -19,8 +19,12 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List($itemArray) { $item in
-                ItemRow(item: $item)
-            }   .navigationTitle("Colors")
+                // Swipe approach
+               ItemRow(item: $item)
+                
+              // Two-button approach
+              //  AlternativeItemRow(item: $item)
+             }   .navigationTitle("Colors")
                 .navigationDestination(for: ListItem.self) { item in
                     if let index = itemArray.firstIndex(where: { $0.id == item.id }) {
                         DetailView(item: $itemArray[index])
